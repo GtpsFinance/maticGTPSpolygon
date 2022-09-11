@@ -151,5 +151,17 @@
     "sass": "^1.51.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3"
-  }
+  },
+  "description": "An open source interface for QuickSwap -- a protocol for decentralized exchange on Polygon.",
+  "main": "config-overrides.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuickSwap/interface-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/QuickSwap/interface-v2/issues"
+  },
+  "homepage": "https://github.com/QuickSwap/interface-v2#readme"
 }
