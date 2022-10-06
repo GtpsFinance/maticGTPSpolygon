@@ -48,14 +48,15 @@ export const GlobalConst = {
   },
   addresses: {
     ROUTER_ADDRESS: {
-      [ChainId.MUMBAI]:'0xf1192cc4dffb4a96d938cca17cc1bd36787e2824',
+      [ChainId.MATIC]: '0x2c596eDF562D2ADF15bEb0Ff3399c6d80905eb6F',
+      [ChainId.MUMBAI]: '0xc57a95ad7d9726b75bf4a1e541150bf1b0d49c7a',
     }, //'0x6207A65a8bbc87dD02C3109D2c74a6bCE4af1C8c';//
     ZERO_ADDRESS: '0x0000000000000000000000000000000000000000',
     LAIR_ADDRESS: '0xf28164a485b0b2c90639e47b0f377b4a438a16b1',
     NEW_LAIR_ADDRESS: '0x958d208Cdf087843e9AD98d23823d32E17d723A1',
     QUICK_ADDRESS: '0x831753DD7087CaC61aB5644b308642cc1c33Dc13',
     NEW_QUICK_ADDRESS: '0xB5C064F955D8e7F38fE0460C556a72987494eE17',
-    FACTORY_ADDRESS: '0xae53b10373744870B528735BE0d26F2938C2d4e9',
+    FACTORY_ADDRESS: '0x2fcb5d3ab09b5a3aefca6fda5c62074411aea6b3',
     GOVERNANCE_ADDRESS: '0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F', //TODO: MATIC
     MERKLE_DISTRIBUTOR_ADDRESS: {
       // TODO: specify merkle distributor for mainnet
@@ -63,6 +64,7 @@ export const GlobalConst = {
       [ChainId.MUMBAI]: undefined,
     },
     QUICK_CONVERSION: '0x333068d06563a8dfdbf330a0e04a9d128e98bf5a',
+    MATIC_USDT_PAIR: '0x604229c960e5cacf2aaeac8be68ac07ba9df81c3',
   },
   utils: {
     QUICK_CONVERSION_RATE: 1000,
@@ -87,6 +89,7 @@ export const GlobalConst = {
     ),
     // the Uniswap Default token list lives here
     // we add '' to remove the possibility of nulls
+    DEFAULT_ADS_LIST_URL: process.env.REACT_APP_ADS_LIST_DEFAULT_URL + '',
     DEFAULT_TOKEN_LIST_URL: process.env.REACT_APP_TOKEN_LIST_DEFAULT_URL + '',
     DEFAULT_LP_FARMS_LIST_URL:
       process.env.REACT_APP_STAKING_LIST_DEFAULT_URL + '',
@@ -319,6 +322,13 @@ export const GlobalValue = {
         'MAI',
         'miMATIC',
       ),
+      VERSA: new Token(
+        ChainId.MATIC,
+        '0x8497842420cFdbc97896C2353D75d89Fc8D5Be5D',
+        18,
+        'VERSA',
+        'VersaGames',
+      ),
       SAND: new Token(
         ChainId.MATIC,
         '0xBbba073C31bF03b8ACf7c28EF0738DeCF3695683',
@@ -349,6 +359,16 @@ export const GlobalValue = {
       ),
     },
   },
+  marketSDK: {
+    QS_PoolDirectory: '0xDeFf0321cD7E62Dccc6df90A3C0720E0a3449CB4',
+    QS_Pools: [
+      '0x627742AaFe82EB5129DD33D237FF318eF5F76CBC',
+      '0x9BE35bc002235e96deC9d3Af374037aAf62BDeF7',
+      '0x1eD65DbBE52553A02b4bb4bF70aCD99e29af09f8',
+    ],
+    LENS: '0x4B1dfA99d53FFA6E4c0123956ec4Ac2a6D9F4c75',
+    BLOCKSPERDAY: 0.5 * GlobalConst.utils.ONEDAYSECONDS,
+  },
 };
 
 export const GlobalData = {
@@ -367,6 +387,7 @@ export const GlobalData = {
         GlobalValue.tokens.COMMON.DAI,
         GlobalValue.tokens.COMMON.GHST,
         GlobalValue.tokens.COMMON.MI,
+        GlobalValue.tokens.COMMON.VERSA,
       ],
     },
     // Some tokens can only be swapped via certain pairs, so we override the list of bases that are considered for these tokens.
@@ -399,6 +420,7 @@ export const GlobalData = {
         GlobalValue.tokens.COMMON.NEW_QUICK,
         GlobalValue.tokens.COMMON.ETHER,
         GlobalValue.tokens.COMMON.WBTC,
+        GlobalValue.tokens.COMMON.VERSA,
       ],
     },
   },
