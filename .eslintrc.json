@@ -9,10 +9,10 @@
     }
   },
   "ignorePatterns": ["node_modules/**/*"],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
+  "node_modules/**/*"
+],
+"settings": {
+  "react": {
   },
   "extends": [
     "plugin:react/recommended",

@@ -34,12 +34,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set up node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org
-
+       name: Run linters
+        uses: wearerequired/lint-action@77d70b9a07ecb93bc98dc46dc27d96c4f004d035
+        
       - name: Install dependencies
         run: npm install
 

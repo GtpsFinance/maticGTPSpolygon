@@ -46,8 +46,11 @@ jobs:
       - name: Build the IPFS bundle
         run: yarn build
 
-      - name: Pin to IPFS(PINATA)
-        id: upload
+      - name:  Update DNS with new IPFS hash
+        uses: uniswap/replace-vercel-dns-record@v1
+        with:
+          domain: 'uniswap.org'
+          subdomain: '_dnslink.app'
         uses: anantaramdas/ipfs-pinata-deploy-action@39bbda1ce1fe24c69c6f57861b8038278d53688d
         with:
           pin-name: QuickSwap ${{ needs.bump_version.outputs.new_tag }}
